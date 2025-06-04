@@ -3,18 +3,21 @@
 ## Project Structure
 
 ```
+
+docs/
+└── MADCluster_Appendix.pdf  
 datasets/
-    ├── MSL/
-    ├── PSM/
-    ├── SMAP/
-    └── SMD/
+├── MSL/
+├── PSM/
+├── SMAP/
+└── SMD/
 MADCluster/
-    ├── RESULTS/
-    ├── MADCluster_MAIN.py
-    ├── MADCluster_MODEL.py
-    ├── MADCluster_run_all_datasets.py
-    ├── MADCluster_SOLVER.py
-    └── MADCluster_UTILS.py
+├── RESULTS/
+├── MADCluster_MAIN.py
+├── MADCluster_MODEL.py
+├── MADCluster_run_all_datasets.py
+├── MADCluster_SOLVER.py
+└── MADCluster_UTILS.py
 README.md
 ```
 
@@ -93,5 +96,19 @@ The following subdirectories are required under the `datasets/` folder.
   Internally collected from multiple application server nodes at eBay with 26 monitored dimensions.  
   📎 [Source](https://github.com/eBay/RANSynCoders/tree/main/data)
 
-
 ---
+
+## Supplementary Materials
+
+Additional materials that extend the main paper are provided below:
+
+- **Mathematical Proofs**  
+  - Analysis of the One-directed Adaptive loss function.
+
+- **Extended Experiments**  
+  - Ablation studies (e.g. Multi-cluster ($k>1$) performance analysis and computational efficiency)
+  - Image anomaly detection transferability (e.g., MVTec AD)
+
+- 📄 [Download Supplementary Appendix (PDF)](./docs/MADCluster_Appendix.pdf)
+
+These materials are referenced in the paper and are provided for transparency and reproducibility.
