@@ -79,10 +79,19 @@ print(f'Affiliation_Precision: {results["Affiliation_Precision"].mean():.5f},   
 
 ## Dataset Preparation
 
-The following subdirectories are required under the `datasets/` folder:
-- MSL
-- SMAP
-- SMD
-- PSM
+The following subdirectories are required under the `datasets/` folder.
+
+- **NASA Datasets** — *Mars Science Laboratory (MSL)* and *Soil Moisture Active Passive (SMAP)*  
+  Collected from NASA spacecraft, these datasets contain anomaly information based on incident reports for spacecraft monitoring systems.  
+  📎 [Source](https://www.kaggle.com/datasets/patrickfleith/nasa-anomaly-detection-dataset-smap-msl)
+
+- **SMD (Server Machine Dataset)**  
+  Gathered from 28 servers over 10 days, with normal activity observed during the first 5 days and anomalies injected sporadically in the last 5 days.  
+  📎 [Source](https://github.com/NetManAIOps/OmniAnomaly/tree/master/ServerMachineDataset)
+
+- **PSM (Pooled Server Metrics)**  
+  Internally collected from multiple application server nodes at eBay with 26 monitored dimensions.  
+  📎 [Source](https://github.com/eBay/RANSynCoders/tree/main/data)
+
 
 ---
