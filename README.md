@@ -23,17 +23,25 @@ README.md
 ## Quick Start
 
 ### 1. Set up the Conda environment
+```python
 conda create -n madcluster python=3.12
 conda activate madcluster
+```
 
 ### 2. Install required libraries
+```python
 pip install pandas numpy torch vus einops
+```
 
 ### 3.1. Run with MADCluster
+```python
 python MADCluster_run_all_datasets.py --objective one-class --MADCluster
+```
 
 ### 3.2. Run with base model only
+```python
 python MADCluster_run_all_datasets.py --objective one-class
+```
 
 ---
 
