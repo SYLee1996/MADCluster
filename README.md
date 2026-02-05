@@ -1,5 +1,37 @@
 # MADCluster: Model-Agnostic Anomaly Detection with Self-supervised Clustering Network
 
+**MADCluster** is a lightweight, plug-in anomaly detection framework for **unsupervised multivariate time-series anomaly detection**. It is designed to be **model-agnostic**: you can attach MADCluster on top of various deep anomaly-detection backbones (e.g., reconstruction-based, transformer-based, one-class objectives) by treating the backbone as a **Base Embedder** that produces temporal representations.
+
+A key challenge in deep one-class anomaly detection is **hypersphere collapse**, where the network converges to a trivial representation (e.g., near-zero embeddings) and fails to form a meaningful boundary for normality. MADCluster mitigates this issue by **single-clustering normal patterns** while **jointly learning and continuously updating the cluster center**, rather than relying on a fixed centroid.
+
+MADCluster consists of three main components:
+
+- **Base Embedder**: extracts high-dimensional temporal dynamics from input sequences (any backbone can be used).
+- **Cluster Distance Mapping**: pulls embeddings toward a learnable normal center and encourages a compact normal region.
+- **Sequence-wise Clustering**: updates the center online through self-learning, producing stable single-cluster behavior.
+
+To enable effective single clustering ($k=1$) in anomaly detection—where common clustering objectives become degenerate—MADCluster introduces a novel **One-directed Adaptive loss**, along with a **mathematical optimization proof** provided in the appendix. This loss trains a one-sided threshold parameter to progressively refine the normal cluster assignment and stabilize centroid learning.
+
+**Results.** Across four public benchmarks (**MSL, SMAP, SMD, PSM**), MADCluster consistently improves backbone performance on both point-wise and region-aware metrics (e.g., **F1, Affiliation Precision/Recall, Range-AUC, VUS**), while remaining computationally lean and easy to integrate.
+
+---
+
+### Key Contributions
+
+- **Model-agnostic plug-in**: works with diverse backbone architectures with minimal modification.
+- **Prevents hypersphere collapse**: dynamic center updates preserve representational expressiveness.
+- **One-directed Adaptive loss + proof**: stable single-cluster learning for one-class anomaly detection.
+- **Consistent benchmark gains**: improves multiple families of baselines on standard datasets.
+
+---
+
+### Paper & Supplementary
+
+- **Paper (arXiv)**: https://arxiv.org/abs/2505.16223
+- **Supplementary Appendix** (proofs & extended experiments): `docs/MADCluster_Appendix.pdf`
+
+> Note: This repository includes an implementation for running MADCluster across multiple datasets and objectives. See **Quick Start** below for reproduction.
+> 
 ## Project Structure
 
 ```
