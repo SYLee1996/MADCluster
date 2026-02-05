@@ -28,7 +28,7 @@ To enable effective single clustering ($k=1$) in anomaly detection—where commo
 ### Paper & Supplementary
 
 - **Paper (arXiv)**: https://arxiv.org/abs/2505.16223
-- **Supplementary Appendix** (proofs & extended experiments): `docs/MADCluster_Appendix.pdf`
+- **Supplementary Appendix** (proofs & extended experiments): `docs/MADCluster_Appendix.pdf` https://github.com/SYLee1996/MADCluster/blob/main/docs/MADCluster_Appendix.pdf
 
 > Note: This repository includes an implementation for running MADCluster across multiple datasets and objectives. See **Quick Start** below for reproduction.
 > 
